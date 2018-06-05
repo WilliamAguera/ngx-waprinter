@@ -1,0 +1,31 @@
+h2 {
+  margin: 0;
+}
+
+.wa-button {
+  margin-top: 20px;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  color: #FFF;
+  background: #6395ff;
+  margin: 0 auto;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  text-align: center;
+  justify-content: center
+}
+
+.header {
+  padding: 20px;
+  background: #f7f7f7;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.header-data {
+  display: grid;
+  font-family: "Arial";
+  font-weight: bold;
+}

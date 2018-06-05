@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  app-wa-print, app-wa-print * {
+    visibility: visible;
+  }
+  app-wa-print {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+}
