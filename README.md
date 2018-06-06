@@ -1,27 +1,71 @@
-# WaPrint
+# NgxWaPrinter
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Having NPM installation run the following command on your terminal to install it:
 
-## Code scaffolding
+    ```bash
+    $ npm install ngx-waprinter --save
+    ```
+    
+## Usage
+The use of the components is basically the importation of the main module and the use of the directives in its application.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+   ```typescript
+   import { BrowserModule } from '@angular/platform-browser';
+   import { FormsModule } from '@angular/forms';
+   import { NgModule } from '@angular/core';
+   import {NgxWaprinterModule} from 'ngx-waprinter';
+   
+   import { AppComponent } from './app.component';
+   
+   @NgModule({
+     declarations: [
+       AppComponent
+     ],
+     imports: [
+       BrowserModule,
+       NgxWaprinterModule
+     ],
+     providers: [],
+     bootstrap: [AppComponent]
+   })
+   export class AppModule { }
+   ```  
+Once your library is imported, you can use its components, directives and pipes in your Angular application:
 
-## Build
+```xml
+<!-- You can now use your library component in app.component.html -->
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+<ngx-waprinter #waPrint>
+  <ngx-waprinter-header>
+    <div class="header" fxLayout="row" fxLayoutAlign="space-between center">
+      <div class="header-data">
+        <h2>{{ 'Pacients Report' | uppercase }}</h2>
+        <span>{{ 'Initial Date: 2018/06/01' | uppercase }}</span>
+        <span>{{ 'Final Date: 2018/06/04' | uppercase }}</span>
+      </div>
+      <img src="../assets/img/mediclogo.jpg" width="70" height="70">
+    </div>
+  </ngx-waprinter-header>
+</ngx-waprinter>
 
-## Running unit tests
+<button class="wa-button" (click)="waPrint.print(data)">Print Report</button>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+### Feedback
+Feedback is always welcome.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## License
 
-## Further help
+The MIT License (MIT)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Permission is hereby granted, free of charge, to any person obtaining a copy of this
+software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
