@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
 
+  [Live Demo](https://ngx-waprinter.stackblitz.io/)
+
+  [Source Code](https://stackblitz.com/edit/ngx-waprinter)
+
 ## Installation
 
 1. Having NPM installation run the following command on your terminal to install it:
