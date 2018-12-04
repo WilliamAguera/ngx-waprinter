@@ -1,19 +1,22 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import { NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {NgxWaprinterModule} from '../../projects/ngx-waprinter/src/lib/ngx-waprinter.module';
+import {AppComponent} from './app.component';
+import {PrintLayoutComponent} from './print-layout/print-layout.component';
+import {AppRoutingModule} from './app-routing.module';
+import {NgxWaPrinterModule} from '../../projects/ngx-waprinter/src/lib/ngx-waprinter.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    PrintLayoutComponent,
   ],
   imports: [
-    NgxWaprinterModule,
-    FlexLayoutModule,
+    AppRoutingModule,
+    NgxWaPrinterModule.forRoot(),
     BrowserModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}

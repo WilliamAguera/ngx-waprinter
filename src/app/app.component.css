@@ -1,6 +1,4 @@
-h2 {
-  margin: 0;
-}
+
 
 .wa-button {
   margin-top: 20px;
@@ -15,17 +13,4 @@ h2 {
   display: flex;
   text-align: center;
   justify-content: center
-}
-
-.header {
-  padding: 20px;
-  background: #f7f7f7;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.header-data {
-  display: grid;
-  font-family: "Arial";
-  font-weight: bold;
 }

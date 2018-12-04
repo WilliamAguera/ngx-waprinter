@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {NgxWaPrinterService} from '../../projects/ngx-waprinter/src/lib/services/ngx-waprinter.service';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,15 @@ export class AppComponent implements OnInit {
 
   public data = [];
 
-  constructor() {}
+  constructor(private waPrinterService: NgxWaPrinterService) {
+  }
 
   ngOnInit() {
     this.data = this.createRandomData(50);
+  }
+
+  print() {
+    this.waPrinterService.print('wa-printer', this.data);
   }
 
   createRandomData(count: number) {
@@ -29,10 +35,6 @@ export class AppComponent implements OnInit {
         id: idx + 1,
         firstName: firstNames[Math.floor(Math.random() * firstNames.length)],
         lastName: lastNames[Math.floor(Math.random() * lastNames.length)],
-        city: cities[Math.floor(Math.random() * cities.length)],
-        title: titles[Math.floor(Math.random() * titles.length)],
-        year: year[Math.floor(Math.random() * year.length)],
-        status: status[Math.floor(Math.random() * status.length)],
       })
     );
   }

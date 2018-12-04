@@ -1,22 +1,4 @@
-<button class="wa-button" (click)="waPrint.print(data)">Print Report</button>
-<br>
-<button class="wa-button" (click)="report.print(data)">Print Report 2</button>
-
-<ngx-waprinter #report>
-  <ngx-waprinter-header>
-    <h2>THIS IS OTHER REPORT HEADER</h2>
-  </ngx-waprinter-header>
-</ngx-waprinter>
-
-<ngx-waprinter #waPrint>
-  <ngx-waprinter-header>
-    <div class="header" fxLayout="row" fxLayoutAlign="space-between center">
-      <div class="header-data">
-        <h2>{{ 'Pacients Report' | uppercase }}</h2>
-        <span>{{ 'Initial Date: 2018/06/01' | uppercase }}</span>
-        <span>{{ 'Final Date: 2018/06/04' | uppercase }}</span>
-      </div>
-      <img src="../assets/img/mediclogo.jpg" width="70" height="70">
-    </div>
-  </ngx-waprinter-header>
-</ngx-waprinter>
+<div [class.isPrinting]="waPrinterService.isPrinting">
+  <button class="wa-button" (click)="print()">Print Report</button>
+</div>
+<router-outlet name="print"></router-outlet>
